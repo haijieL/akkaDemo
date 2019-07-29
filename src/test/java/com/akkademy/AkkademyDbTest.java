@@ -22,7 +22,7 @@ public class AkkademyDbTest {
         actorRef.tell(new SetRequest("key", "value"), ActorRef.noSender());
         actorRef.tell(new SetRequest("key1", "value1"), ActorRef.noSender());
         AkkademyDb akkademyDb = actorRef.underlyingActor();
-        assertEquals(akkademyDb.map.get("key"), "value");
-        assertEquals(akkademyDb.map.get("key1"), "value1");
+        assertEquals(akkademyDb.getMap().get("key"), "value");
+        assertEquals(akkademyDb.getMap().get("key1"), "value1");
     }
 }
